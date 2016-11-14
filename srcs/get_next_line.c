@@ -6,11 +6,11 @@
 /*   By: khansman <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/13 16:59:24 by khansman          #+#    #+#             */
-/*   Updated: 2016/11/14 07:38:52 by khansman         ###   ########.fr       */
+/*   Updated: 2016/11/14 13:53:53 by khansman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "libft.h"
 
 static void		remalloc(char **line, int len)
 {
