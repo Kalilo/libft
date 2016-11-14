@@ -14,7 +14,9 @@
 # define LIBFT_H
 
 /*
-**	Includes:
+** ----------\
+** Includes   |
+** ----------/
 */
 
 # include <string.h>
@@ -24,9 +26,10 @@
 # include <sys/uio.h>
 
 /*
-**	Defines:
+** ----------\
+** Defines    |
+** ----------/
 */
-
 
 /*
 ** get_next_line
@@ -56,7 +59,9 @@
 # define SKP_BLK while (*tmp == c) ++tmp;
 
 /*
-**	Structures:
+** ----------\
+** Structures |
+** ----------/
 */
 
 typedef struct		s_buff
@@ -87,7 +92,9 @@ typedef struct		s_list
 }					t_list;
 
 /*
-**	Prototypes:
+** ----------\
+** Prototypes |
+** ----------/
 */
 
 void				*ft_memset(void *b, int c, size_t len);
@@ -161,4 +168,9 @@ void				ft_print_memory(const void *addr, size_t size);
 void				ft_die(char *str);
 char				*ft_strtolower(char *str);
 
+/*
+**                                /----------\                                **
+** ----- ----- ----- ----- ----- |  The End   | ----- ----- ----- ----- ----- **
+**                                \----------/                                **
+*/
 #endif
