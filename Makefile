@@ -117,11 +117,7 @@ tput setaf 10
 tput sgr0
 endef
 
-all:
-	@if [ ! -f $(NAME) ]; then \
-		make $(NAME) ; else \
-		echo make: "Nothing to be done for 'all.'" ; \
-		fi
+all: $(NAME)
 
 $(libft):
 	@if [ ! -f $(NAME) ]; then \
@@ -129,7 +125,13 @@ $(libft):
 		echo make: "Nothing to be done for 'libft'." ; \
 		fi
 
-$(NAME): qme objs_dir $(OBJS)
+$(NAME):
+	@if [ ! -f $(NAME) ]; then \
+		make compile ; else \
+		echo make: "Nothing to be done for 'all.'" ; \
+		fi
+
+compile: qme objs_dir $(OBJS)
 	@$(call colourecho, "Compiling $(NAME)")
 	@ar -rc $(NAME) $(OBJS)
 	@ranlib $(NAME)
