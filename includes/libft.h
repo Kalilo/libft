@@ -27,10 +27,28 @@
 **	Defines:
 */
 
+
+/*
+** get_next_line
+*/
 # define BUFF_SIZE 32
-# define L_LEN 50
-# define NUM_FILES 10
-# define MAX_BUFF 800000
+# define NUM_BUFF  10
+# define LINE_SIZE 50
+
+# define ACTIVE    buff->active
+# define POS       buff->pos
+# define AB_POS    (buff->pos % BUFF_SIZE)
+# define BUFF      buff->buff
+# define B_FD      buff->fd
+# define RET       buff->ret
+# define L         buff->l
+# define LINE      buff->line
+
+# define BUFF_END (BUFF[POS] == '\0' && RET < BUFF_SIZE)
+
+/*
+** base strings
+*/
 
 # define BASE_STR static char *b = "0123456789ABCDEF";
 # define BASE_STR2 char *base = "0123456789abcdef";
@@ -41,15 +59,15 @@
 **	Structures:
 */
 
-int					get_next_line(const int fd, char **line);
-
 typedef struct		s_buff
 {
 	char			buff[BUFF_SIZE];
-	int				buf_pos;
-	int				buf_fd;
-	int				eof;
-	int				buf_init;
+	char			active;
+	int				fd;
+	int				ret;
+	int				pos;
+	int				l;
+	char			*line;
 }					t_buff;
 
 typedef struct		s_base_var
