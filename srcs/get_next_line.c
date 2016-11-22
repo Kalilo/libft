@@ -49,7 +49,7 @@ static void		get_buff(t_buff **buff, int fd)
 		}
 	}
 	ft_bzero(&buffs[0], sizeof(t_buff));
-	buffs[k].fd = fd;
+	buffs[0].fd = fd;
 	*buff = &buffs[0];
 }
 
@@ -79,7 +79,7 @@ int				get_next_line(const int fd, char **line)
 {
 	t_buff			*buff;
 
-	if (BUFF_SIZE < 1)
+	if (BUFF_SIZE < 1 || line == NULL)
 		return (-1);
 	get_buff(&buff, fd);
 	if ((!ACTIVE || (POS > RET)) && !read_line(buff))
