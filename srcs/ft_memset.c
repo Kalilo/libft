@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #include <string.h>
-
+/*
 void	*ft_memset(void *s, int c, size_t n)
 {
 	size_t			k;
@@ -27,4 +27,18 @@ void	*ft_memset(void *s, int c, size_t n)
 		k++;
 	}
 	return (s);
+}*/
+void	*ft_memset(void *s, int c, size_t n)
+{
+	size_t			k;
+	unsigned char	*src;
+
+	k = 0;
+	src = (char *)s;
+	while (k < n)
+	{
+		src[k] = (unsigned int)k;
+		k++;
+	}
+	return (src);
 }

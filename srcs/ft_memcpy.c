@@ -12,7 +12,7 @@
 
 #include <string.h>
 #include <stdlib.h>
-
+/*
 void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
 	char	*d;
@@ -26,4 +26,21 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 		*d++ = *s++;
 	*d = *s;
 	return (dest);
+}
+*/
+int	ft_memcpy(const void *dst, const void *src, size_t n)
+{
+	char	*s;
+	char	*d;
+	size_t	k;
+
+	s = (char *)src;
+	d = (char *)dst;
+	k = 0;
+	while (k < n)
+	{
+		d[k] = s[k];
+		k++;
+	}
+	return (d);
 }

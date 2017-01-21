@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #include <unistd.h>
-
+/*
 static int	ft_int_len(int n)
 {
 	int		k;
@@ -52,4 +52,13 @@ void		ft_putnbr(int n)
 		l--;
 		write(1, &c, 1);
 	}
+}
+*/
+void		ft_putnbr(int n)
+{
+	char	*num;
+
+	num = ft_itoa(n);
+	ft_putstr(num);
+	free(num);
 }

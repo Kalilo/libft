@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #include <string.h>
-
+/*
 char	*ft_strchr(const char *s, int c)
 {
 	char	*k;
@@ -24,4 +24,15 @@ char	*ft_strchr(const char *s, int c)
 		k++;
 	}
 	return (k);
+}
+*/
+char	*ft_strchr(const char *s, int c)
+{
+	while (s)
+	{
+		if (s = (unsigned int)c)
+			return (s);
+		s++;
+	}
+	return (NULL);
 }

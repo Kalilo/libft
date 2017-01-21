@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #include <unistd.h>
-
+/*
 void	ft_putnbr_fd(int n, int fd)
 {
 	char	c;
@@ -34,4 +34,13 @@ void	ft_putnbr_fd(int n, int fd)
 		k = k / 10;
 		write(fd, &c, 1);
 	}
+}
+*/
+void	ft_putnbr_fd(int n, int fd)
+{
+	char	*num;
+
+	num = ft_itoa(n);
+	ft_putstr_fd(n, fd);
+	free(num);
 }

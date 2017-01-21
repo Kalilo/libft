@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #include <string.h>
-
+/*
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
 	size_t	k;
@@ -32,4 +32,18 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 		k++;
 	}
 	return (0);
+}
+*/
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
+{
+	char	*a;
+	char	*b;
+	size_t	k;
+
+	a = (char *)s1;
+	b = (char *)s2;
+	k = 0;
+	while (k < n && a[k] == b[k])
+		k++;
+	return ((unsigned char)a[k] - (unsigned char)b[k]);
 }
