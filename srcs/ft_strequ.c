@@ -10,6 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+/*
 int	ft_strequ(char const *s1, char const *s2)
 {
 	int	k;
@@ -26,4 +27,16 @@ int	ft_strequ(char const *s1, char const *s2)
 	if (s1[k] != '\0' || s2[k] != '\0')
 		return (0);
 	return (1);
+}
+*/
+int	ft_strequ(char const *s1, char const *s2)
+{
+	if (!s1 || !s2)
+		return (0);
+	while (*s1 && *s2)
+	{
+		s1++;
+		s2++;
+	}
+	return (*s1 == *s2);
 }

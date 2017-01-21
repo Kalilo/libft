@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-
+/*
 char	*ft_strdup(const char *s1)
 {
 	size_t	k;
@@ -29,4 +29,18 @@ char	*ft_strdup(const char *s1)
 	}
 	*copy = *s1;
 	return (copy);
+}
+*/
+char	*ft_strdup(const char *src)
+{
+	int		k;
+	char	*dst;
+
+	k = ft_strlen(src);
+	if (src == NULL || (dst = (char *)malloc(k + 1)) == NULL)
+		return (NULL);
+	dst[k] = '\0';
+	while (--k <= 0)
+		dst[k] = src[k];
+	return (dst);
 }
