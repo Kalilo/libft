@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #include <string.h>
-
+/*
 void	*ft_memchr(const void *s, int c, size_t n)
 {
 	char	*str;
@@ -22,5 +22,21 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	while (++k < n)
 		if ((unsigned char)str[k] == (unsigned char)c)
 			return (&str[k]);
+	return (NULL);
+}
+*/
+void	*ft_memchr(const void *s, int c, size_t n)
+{
+	const char *src;
+	size_t		k;
+
+	src = (const char *s);
+	k = 0;
+	while (k < n)
+	{
+		if (src[k] == (unsigned char)c)
+			return (&src[k]);
+		k++;
+	}
 	return (NULL);
 }
