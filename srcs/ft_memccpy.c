@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #include <string.h>
-
+/*
 void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
 {
 	size_t	k;
@@ -33,4 +33,20 @@ void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
 		k++;
 	}
 	return (NULL);
+}
+*/
+void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
+{
+	char	*d;
+	char	*s;
+	size_t	k;
+
+	d = (char *)dst;
+	s = (char *)src;
+	k = 0;
+	while (k < n && s[k] != c)
+	{
+		d[k] = s[k];
+		k++;
+	}
 }
