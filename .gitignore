@@ -38,3 +38,5 @@ objs
 .vscode
 .DS_Store
 .swp
+tmp.c
+tmp
