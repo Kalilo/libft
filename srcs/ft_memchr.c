@@ -30,7 +30,7 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	const char *src;
 	size_t		k;
 
-	src = (const char *s);
+	src = (const char *)s;
 	k = 0;
 	while (k < n)
 	{

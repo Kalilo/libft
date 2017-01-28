@@ -49,4 +49,5 @@ void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
 		d[k] = s[k];
 		k++;
 	}
+	return ((s[k] == c) ? (void *)&s[k + 1] : NULL);
 }
