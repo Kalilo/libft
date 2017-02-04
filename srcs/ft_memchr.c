@@ -35,7 +35,7 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	while (k < n)
 	{
 		if (src[k] == (unsigned char)c)
-			return (&src[k]);
+			return ((void *)&src[k]);
 		k++;
 	}
 	return (NULL);

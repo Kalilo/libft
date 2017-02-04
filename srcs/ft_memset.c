@@ -34,10 +34,10 @@ void	*ft_memset(void *s, int c, size_t n)
 	unsigned char	*src;
 
 	k = 0;
-	src = (char *)s;
+	src = (unsigned char *)s;
 	while (k < n)
 	{
-		src[k] = (unsigned int)k;
+		src[k] = (unsigned int)c;
 		k++;
 	}
 	return (src);

@@ -28,7 +28,7 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	return (dest);
 }
 */
-int	ft_memcpy(const void *dst, const void *src, size_t n)
+char	*ft_memcpy(const void *dst, const void *src, size_t n)
 {
 	char	*s;
 	char	*d;
