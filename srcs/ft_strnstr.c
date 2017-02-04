@@ -39,7 +39,7 @@ char	*ft_strnstr(const char *big, const char *little, size_t n)
 	while (k < n)
 	{
 		if (!ft_strncmp(&big[k], little, l))
-			return (&big[k]);
+			return ((char *)&big[k]);
 		k++;
 	}
 	return (NULL);

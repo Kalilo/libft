@@ -30,8 +30,8 @@ char	*ft_strchr(const char *s, int c)
 {
 	while (s)
 	{
-		if (s = (unsigned int)c)
-			return (s);
+		if ((unsigned char)s == (unsigned int)c)
+			return ((char *)s);
 		s++;
 	}
 	return (NULL);
