@@ -13,17 +13,19 @@
 #include <string.h>
 #include <stdlib.h>
 
-void	*ft_memcpy(void *dest, const void *src, size_t n)
+char	*ft_memcpy(const void *dst, const void *src, size_t n)
 {
-	char	*d;
 	char	*s;
+	char	*d;
+	size_t	k;
 
-	if (n == 0 || dest == src)
-		return (dest);
-	d = (char *)dest;
 	s = (char *)src;
-	while (--n)
-		*d++ = *s++;
-	*d = *s;
-	return (dest);
+	d = (char *)dst;
+	k = 0;
+	while (k < n)
+	{
+		d[k] = s[k];
+		k++;
+	}
+	return (d);
 }

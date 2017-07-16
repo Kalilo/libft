@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #include <stdlib.h>
-#include "libft.h"
+#include "../includes/libft.h"
 
 static void	neg_case(char **str, unsigned int *k, long int *num, int base)
 {

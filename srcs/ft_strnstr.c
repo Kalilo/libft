@@ -11,20 +11,32 @@
 /* ************************************************************************** */
 
 #include <string.h>
-#include "libft.h"
+#include "../includes/libft.h"
 
-char	*ft_strnstr(const char *s1, const char *s2, size_t n)
+char	*ft_strnstr(const char *big, const char *little, size_t n)
 {
-	size_t	k;
+	char	k;
+	char	l;
+	size_t	len;
 
-	if (*s2 == '\0')
-		return ((char *)s1);
-	k = ft_strlen(s2);
-	while (*s1 != '\0' && n-- >= k)
+	if ((k = *little++) != '\0')
 	{
-		if (*s1 == *s2 && ft_memcmp(s1, s2, k) == 0)
-			return ((char *)s1);
-		s1++;
+		len = strlen(little);
+		while (1)
+		{
+			while (1)
+			{
+				if ((l = *big++) == '\0' || n-- < 1)
+					return (NULL);
+				if (l == k)
+					break ;
+			}
+			if (len > n)
+				return (NULL);
+			if (!strncmp(big, little, len))
+				break ;
+		}
+		big--;
 	}
-	return (NULL);
+	return ((char *)big);
 }

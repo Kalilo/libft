@@ -10,23 +10,16 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../includes/libft.h"
 
-char	*ft_strdup(const char *s1)
+char	*ft_strdup(const char *src)
 {
 	size_t	k;
-	char	*copy;
+	char	*tmp;
 
-	k = 0;
-	while (s1[k] != '\0')
-		k++;
-	if (!(copy = malloc(k + 1)))
+	k = ft_strlen(src) + 1;
+	if (!(tmp = (char *)malloc((u_int)k)))
 		return (NULL);
-	while (k > 0)
-	{
-		copy[k] = s1[k];
-		k--;
-	}
-	*copy = *s1;
-	return (copy);
+	ft_memcpy(tmp, src, k);
+	return (tmp);
 }

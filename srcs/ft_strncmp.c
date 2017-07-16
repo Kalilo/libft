@@ -12,36 +12,17 @@
 
 #include <string.h>
 
-static int	ft_diff(char s1, char s2)
+int		ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	int		l;
-	int		m;
-
-	if (s1 < 0)
-		m = 256 + s1;
-	else
-		m = s1;
-	if (s2 < 0)
-		l = 256 + s2;
-	else
-		l = s2;
-	return (m - l);
-}
-
-int			ft_strncmp(const char *s1, const char *s2, size_t n)
-{
-	size_t	k;
-
-	k = 0;
-	while (s1[k] != '\0' && s2[k] != '\0' && k < n)
+	while (n > 0)
 	{
-		if (s1[k] != s2[k])
-			return (ft_diff(s1[k], s2[k]));
-		k++;
+		if (*s1 != *s2)
+			return ((unsigned char)*s1 < (unsigned char)*s2 ? -1 : 1);
+		else if (*s1 == '\0')
+			return (0);
+		s1++;
+		s2++;
+		n--;
 	}
-	if (s1[k] != '\0' && k != n)
-		return (ft_diff(s1[k], 0));
-	else if (s2[k] != '\0' && k != n)
-		return (ft_diff(0, s2[k]));
 	return (0);
 }

@@ -10,12 +10,12 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../includes/libft.h"
 
 void	ft_print_hex(unsigned char num)
 {
 	BASE_STR2;
 	if (num >= 16)
-		ft_print_hex(num / 16);
-	write(1, (base + (num % 16)), 1);
+		ft_print_hex(num >> 4);
+	write(1, (base + (num & 0xF)), 1);
 }
