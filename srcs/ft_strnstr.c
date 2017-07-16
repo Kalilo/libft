@@ -21,7 +21,7 @@ char	*ft_strnstr(const char *big, const char *little, size_t n)
 
 	if ((k = *little++) != '\0')
 	{
-		len = strlen(little);
+		len = ft_strlen(little);
 		while (1)
 		{
 			while (1)
@@ -33,7 +33,7 @@ char	*ft_strnstr(const char *big, const char *little, size_t n)
 			}
 			if (len > n)
 				return (NULL);
-			if (!strncmp(big, little, len))
+			if (!ft_strncmp(big, little, len))
 				break ;
 		}
 		big--;

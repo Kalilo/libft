@@ -13,7 +13,7 @@
 #include <string.h>
 #include <stdlib.h>
 
-char	*ft_memcpy(const void *dst, const void *src, size_t n)
+void	*ft_memcpy(const void *dst, const void *src, size_t n)
 {
 	char	*s;
 	char	*d;
